@@ -4,41 +4,32 @@
 
 #ifdef SWAP_HANDS_ENABLE
 
-__attribute__ ((weak))
-const keypos_t PROGMEM hand_swap_config[MATRIX_ROWS][MATRIX_COLS] =
+__attribute__((weak)) const keypos_t PROGMEM hand_swap_config[MATRIX_ROWS][MATRIX_COLS] =
     // The LAYOUT macro could work for this, but it was harder to figure out the
     // identity using it.
 
     // This is the identity layout.
-/*
-{
-    { {0, 0}, {1, 0}, {2, 0}, {3, 0}, {4, 0}, {5, 0} },
-    { {0, 1}, {1, 1}, {2, 1}, {3, 1}, {4, 1}, {5, 1} },
-    { {0, 2}, {1, 2}, {2, 2}, {3, 2}, {4, 2}, {5, 2} },
-    { {0, 3}, {1, 3}, {2, 3}, {3, 3}, {4, 3}, {5, 3} },
-    { {0, 4}, {1, 4}, {2, 4}, {3, 4}, {4, 4}, {5, 4} },
+    /*
+    {
+        { {0, 0}, {1, 0}, {2, 0}, {3, 0}, {4, 0}, {5, 0} },
+        { {0, 1}, {1, 1}, {2, 1}, {3, 1}, {4, 1}, {5, 1} },
+        { {0, 2}, {1, 2}, {2, 2}, {3, 2}, {4, 2}, {5, 2} },
+        { {0, 3}, {1, 3}, {2, 3}, {3, 3}, {4, 3}, {5, 3} },
+        { {0, 4}, {1, 4}, {2, 4}, {3, 4}, {4, 4}, {5, 4} },
 
-    { {0, 5}, {1, 5}, {2, 5}, {3, 5}, {4, 5}, {5, 5} },
-    { {0, 6}, {1, 6}, {2, 6}, {3, 6}, {4, 6}, {5, 6} },
-    { {0, 7}, {1, 7}, {2, 7}, {3, 7}, {4, 7}, {5, 7} },
-    { {0, 8}, {1, 8}, {2, 8}, {3, 8}, {4, 8}, {5, 8} },
-    { {0, 9}, {1, 9}, {2, 9}, {3, 9}, {4, 9}, {5, 9} },
-};
-*/
+        { {0, 5}, {1, 5}, {2, 5}, {3, 5}, {4, 5}, {5, 5} },
+        { {0, 6}, {1, 6}, {2, 6}, {3, 6}, {4, 6}, {5, 6} },
+        { {0, 7}, {1, 7}, {2, 7}, {3, 7}, {4, 7}, {5, 7} },
+        { {0, 8}, {1, 8}, {2, 8}, {3, 8}, {4, 8}, {5, 8} },
+        { {0, 9}, {1, 9}, {2, 9}, {3, 9}, {4, 9}, {5, 9} },
+    };
+    */
 
     // This is the mirror, q <-> p, w <-> o, etc...
-{
- { {0, 5}, {1, 5}, {2, 5}, {3, 5}, {4, 5}, {5, 5} },
- { {0, 6}, {1, 6}, {2, 6}, {3, 6}, {4, 6}, {5, 6} },
- { {0, 7}, {1, 7}, {2, 7}, {3, 7}, {4, 7}, {5, 7} },
- { {0, 8}, {1, 8}, {2, 8}, {3, 8}, {4, 8}, {5, 8} },
- { {0, 9}, {1, 9}, {2, 9}, {3, 9}, {4, 9}, {5, 9} },
+    {
+        {{0, 5}, {1, 5}, {2, 5}, {3, 5}, {4, 5}, {5, 5}}, {{0, 6}, {1, 6}, {2, 6}, {3, 6}, {4, 6}, {5, 6}}, {{0, 7}, {1, 7}, {2, 7}, {3, 7}, {4, 7}, {5, 7}}, {{0, 8}, {1, 8}, {2, 8}, {3, 8}, {4, 8}, {5, 8}}, {{0, 9}, {1, 9}, {2, 9}, {3, 9}, {4, 9}, {5, 9}},
 
- { {0, 0}, {1, 0}, {2, 0}, {3, 0}, {4, 0}, {5, 0} },
- { {0, 1}, {1, 1}, {2, 1}, {3, 1}, {4, 1}, {5, 1} },
- { {0, 2}, {1, 2}, {2, 2}, {3, 2}, {4, 2}, {5, 2} },
- { {0, 3}, {1, 3}, {2, 3}, {3, 3}, {4, 3}, {5, 3} },
- { {0, 4}, {1, 4}, {2, 4}, {3, 4}, {4, 4}, {5, 4} },
+        {{0, 0}, {1, 0}, {2, 0}, {3, 0}, {4, 0}, {5, 0}}, {{0, 1}, {1, 1}, {2, 1}, {3, 1}, {4, 1}, {5, 1}}, {{0, 2}, {1, 2}, {2, 2}, {3, 2}, {4, 2}, {5, 2}}, {{0, 3}, {1, 3}, {2, 3}, {3, 3}, {4, 3}, {5, 3}}, {{0, 4}, {1, 4}, {2, 4}, {3, 4}, {4, 4}, {5, 4}},
 };
 
 #    ifdef ENCODER_MAP_ENABLE
@@ -56,11 +47,8 @@ oled_rotation_t oled_init_kb(oled_rotation_t rotation) {
 }
 
 static void render_logo(void) {
-    static const char PROGMEM qmk_logo[] = {
-        0x80,0x81,0x82,0x83,0x84,0x85,0x86,0x87,0x88,0x89,0x8a,0x8b,0x8c,0x8d,0x8e,0x8f,0x90,0x91,0x92,0x93,0x94,
-        0xa0,0xa1,0xa2,0xa3,0xa4,0xa5,0xa6,0xa7,0xa8,0xa9,0xaa,0xab,0xac,0xad,0xae,0xaf,0xb0,0xb1,0xb2,0xb3,0xb4,
-        0xc0,0xc1,0xc2,0xc3,0xc4,0xc5,0xc6,0xc7,0xc8,0xc9,0xca,0xcb,0xcc,0xcd,0xce,0xcf,0xd0,0xd1,0xd2,0xd3,0xd4,0
-    };
+    static const char PROGMEM qmk_logo[] = {0x80, 0x81, 0x82, 0x83, 0x84, 0x85, 0x86, 0x87, 0x88, 0x89, 0x8A, 0x8B, 0x8C, 0x8D, 0x8E, 0x8F, 0x90, 0x91, 0x92, 0x93, 0x94, 0xA0, 0xA1, 0xA2, 0xA3, 0xA4, 0xA5, 0xA6, 0xA7, 0xA8, 0xA9, 0xAA, 0xAB, 0xAC, 0xAD, 0xAE, 0xAF, 0xB0, 0xB1, 0xB2, 0xB3, 0xB4, 0xC0, 0xC1, 0xC2, 0xC3, 0xC4, 0xC5, 0xC6, 0xC7, 0xC8, 0xC9, 0xCA, 0xCB, 0xCC, 0xCD, 0xCE, 0xCF, 0xD0, 0xD1, 0xD2, 0xD3, 0xD4, 0x00};
+
     oled_write_P(qmk_logo, false);
 }
 
@@ -69,9 +57,6 @@ void print_status_narrow(void) {
     switch (get_highest_layer(layer_state)) {
         case 0:
             oled_write_ln_P(PSTR("Qwrt"), false);
-            break;
-        case 1:
-            oled_write_ln_P(PSTR("Clmk"), false);
             break;
         default:
             oled_write_P(PSTR("Mod\n"), false);
@@ -95,7 +80,6 @@ void print_status_narrow(void) {
     }
     oled_write_P(PSTR("\n\n"), false);
     led_t led_usb_state = host_keyboard_led_state();
-    oled_write_ln_P(PSTR("CPSLK"), led_usb_state.caps_lock);
 }
 
 bool oled_task_kb(void) {
